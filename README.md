@@ -1,18 +1,27 @@
-# Kink Jars
+# Kink Jars — Expanded
 
-A single-page questionnaire: pick a color, rate each jar 1–5, save a PNG.
-Everything runs in the browser. Nothing is uploaded, and answers are only kept in that person's browser (localStorage) so a refresh doesn't wipe them.
+Fork of [LockedTony/kink-jars](https://github.com/LockedTony/kink-jars), retaining the original canvas jar artwork and colour picker.
 
-## Host it free on GitHub Pages
+## Features
 
-1. Create a new repo (public is required for free Pages) and add `index.html`.
-2. Repo **Settings → Pages → Build and deployment → Source: Deploy from a branch**, pick `main` / `(root)`, Save.
-3. After a minute it's live at `https://<your-username>.github.io/<repo-name>/`.
+- 350 built-in, non-graphic labels for adult interests, dynamics, equipment and fantasies.
+- Search and category filters, with a paginated questionnaire.
+- Add and remove custom jars without editing code; duplicate labels are rejected.
+- Rate jars from 1 to 5. Tap the selected rating again to return to zero.
+- Preview and PNG export omit every zero-valued jar and compact the remaining grid.
+- Name, colour, answers and custom jars persist in browser localStorage. Answers are not uploaded.
+- Long exports scale down to keep image height within 16,000 pixels.
 
-Netlify Drop or Cloudflare Pages work too: drag the folder in, done.
+## Catalogue references
 
-## Customizing
+Reference lists consulted October 9, 2026: [BDSM Checklist](https://bdsmchecklist.com/activities), [KinkCodex](https://knowyourkinkcode.com/kink-codex/glossary/), [Wikipedia BDSM glossary](https://en.wikipedia.org/wiki/Glossary_of_BDSM), and [FetLife Kinktionary](https://fetlife.com/kinktionary).
 
-- **Jar labels:** edit the `JARS` array at the top of the `<script>`. Each entry is a list of label lines. The grid is 7 columns wide and grows rows as needed.
-- **Preset colors:** edit `PRESETS`.
-- **Overflow looks:** six styles (drips, puddle, foam with popped lid, geyser, splash, hearts), assigned so neighbors never match. Details are seeded per jar, so every friend's sheet is consistent.
+This is an extensible catalogue, not a claim to enumerate every kink. Categories and role variants are editorial organization; the reference lists do not individually verify every variant. Labels describe consensual adult interests and fantasies, not instructions or an agreement to participate.
+
+## Hosting
+
+Enable GitHub Pages from `main` and `/ (root)`. The app is the standalone `index.html`; no build or server is required. Fonts load from Google Fonts, with system fallbacks.
+
+## Validation
+
+JavaScript syntax checked. Node checks passed for catalogue uniqueness, empty-poster handling, nonzero-only compact rendering, export dimensions and saved custom-jar restoration. Browser interaction QA is separate.
